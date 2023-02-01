@@ -47,3 +47,7 @@ You can explore more about Pretrained [Computer Vision AI Models](https://docs.n
 ## Inference Performance of Nvidia's AI Models
 
 With NVIDIA pretrained models, you can maximise inference performance on all platforms, including the cloud with GPUs built on the NVIDIA Ampere architecture and the edge with NVIDIA JetsonTM solutions. Check out the thorough [Performance Datasheet](https://docs.nvidia.com/tao/tao-toolkit/text/model_zoo/overview.html#performance-metrics) for more information on batch size and other models.
+## Acknowledgements
+
+ - [Official Documentation](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/tao/resources/tao-getting-started)
+
