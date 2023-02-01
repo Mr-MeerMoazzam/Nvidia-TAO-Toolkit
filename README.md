@@ -3,9 +3,7 @@
 
 The NVIDIA TAO Toolkit, which is based on TensorFlow and PyTorch, makes use of the power of transfer learning while accelerating the model-training process and optimising the model for inference throughput on the target platform. It produces a workflow that is incredibly efficient. Take your own models or pre-trained models, modify them to your own real or synthetic data, and then optimise for inference throughput. All without the requirement for AI knowledge or large training datasets.
 
-In a nutshell, it's used to build extremely accurate, customizable, and production-ready AI models to power your speech and computer vision AI applications.
-
-In this repo, you will find all about Nvidia TAO Toolkit.
+In a nutshell, it's used to build extremely accurate, customizable, and production-ready AI models to power your speech and computer vision AI applications. In this repo, you will find all about Nvidia TAO Toolkit.
 
 
 
