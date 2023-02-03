@@ -39,6 +39,45 @@ Note: Prior to the Pascal generation, TAO Toolkit was not supported by GPUs.
 | `nvidia-driver` | >520 | Not needed if you are using TAO API |
 | `python-pip` |  >21.06	 | Not needed if you are using TAO API |
 
+## Package Content
+
+Download the TAO package, which includes startup scripts, Jupyter notebooks, and configuration files. TAO is also supported on Google Colab; if you wish to try on Colab, you can skip this step and go straight to the [Running on Google Colab](https://docs.nvidia.com/tao/tao-toolkit/text/running_in_cloud/running_tao_toolkit_on_google_colab.html#id1). Otherwise, follow below instructions.
+
+
+
+```bash
+wget --content-disposition https://api.ngc.nvidia.com/v2/resources/nvidia/tao/tao-getting-started/versions/4.0.0/zip -O getting_started_v4.0.0.zip
+unzip -u getting_started_v4.0.0.zip  -d ./getting_started_v4.0.0 && rm -rf getting_started_v4.0.0.zip && cd ./getting_started_v4.0.0
+
+```
+
+
+## Running TAO Toolkit
+
+Both a docker container and a set of python wheels are options for the TAO toolkit. Depending on your setup and preferences, there are 4 methods to launch TAO Toolkit:
+
+- the launcher CLI
+
+- the containers directly
+
+- the tao toolkit apis
+
+- python wheels
+
+Running TAO toolkit through launcher CLI is an easy and beginner friendly method so that we will use this method to run TAO Toolkit.
+
+### Launcher CLI
+
+The TAO Toolkit launcher is a simple command-line interface written in Python. The launcher serves as a user interface for TAO Toolkit containers developed on top of PyTorch and TensorFlow. The CLI hides from the user which network is implemented in which container. Depending on the model you intend to employ, the relevant container is launched automatically.
+
+Follow the steps listed below to instal the necessary prerequisite applications before using the launcher.
+
+#### Installing the prerequisites
+The TAO Toolkit launcher is a Python3 package that can run on Python versions >= 3.6.9.
+
+1. Docker-ce Installation 
+For the installation of docker-ce you can follow the [Official Instructions](https://docs.docker.com/engine/install/). After setting up docker-ce, make sure the docker can be run without sudo by following the [post-installation instructions](https://docs.docker.com/engine/install/linux-postinstall/).
+
 
 ## Acknowledgements
 
