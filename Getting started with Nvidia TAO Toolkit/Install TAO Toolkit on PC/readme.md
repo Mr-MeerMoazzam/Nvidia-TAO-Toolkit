@@ -72,7 +72,7 @@ The TAO Toolkit launcher is a simple command-line interface written in Python. T
 
 Follow the steps listed below to instal the necessary prerequisite applications before using the launcher.
 
-#### Installing the prerequisites
+#### <b>Installing the prerequisites</b>
 The TAO Toolkit launcher is a Python3 package that can run on Python versions >= 3.6.9.
 
 ##### 1. Install `docker-ce`  
@@ -80,11 +80,11 @@ For the installation of docker-ce you can follow the [Official Instructions](htt
 
 ##### 2. Install `nvidia-container-toolkit`
 The following is a list of requirements for installing the NVIDIA Container Toolkit:
-######  1. GNU/Linux x86_64 with kernel version > 3.10
-######  2. Docker >= 19.03 (recommended, but some distributions may include older versions of Docker. The minimum supported version is 1.12)
-######  3. NVIDIA GPU with Architecture >= Kepler (or compute capability 3.0)
-######  4. NVIDIA Linux drivers >= 418.81.07 (Note that older driver releases or branches are unsupported.)
-######  5. Setup the package repository and the GPG key
+###### 1. GNU/Linux x86_64 with kernel version > 3.10
+###### 2. Docker >= 19.03 (recommended, but some distributions may include older versions of Docker. The minimum supported version is 1.12)
+###### 3. NVIDIA GPU with Architecture >= Kepler (or compute capability 3.0)
+###### 4. NVIDIA Linux drivers >= 418.81.07 (Note that older driver releases or branches are unsupported.)
+###### 5. Setup the package repository and the GPG key
 
 ```bash
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
@@ -136,6 +136,90 @@ This should produce the following console output:
 +-----------------------------------------------------------------------------+
 
 ```
+
+##### 3. Get an NGC Account and API Key`
+The following is a list of requirements for installing the NVIDIA Container Toolkit:
+###### 1. Go to [NGC](https://catalog.ngc.nvidia.com/) and click the the `Register for NGC` button. 
+
+###### 2. Enter your Email address and click Next, or click Create an Account.
+###### 3. Choose your organization when prompted for Organization/Team.
+###### 4. Click Sign In.
+###### 5. [Get NGC Key](https://ngc.nvidia.com/setup/api-key)
+
+###### 6. Log in to the NGC docker registry (`nvcr.io`) using the command `docker login nvcr.io` and enter the following credentials:
+Output:
+```bash
+Username: $oauthtoken
+Password: <Your Key>
+```
+where `YOUR_NGC_API_KEY` corresponds to the key you generated from step 5.
+
+##### 4. Setup your python environment with python version >= 3.6.9
+`Miniconda` is suggested for creating a Python environment. The steps below demonstrate how to create a Python Conda environment.
+###### 1. Set up a `miniconda` environment by following the directions in this [link](https://docs.conda.io/en/latest/miniconda.html). 
+
+###### 2. Once you have installed `miniconda`, create a new environment by setting the Python version to 3.6.
+```bash
+conda create -n launcher python=3.6
+```
+###### 3. Activate the `conda` environment that you have just created.
+```bash
+conda activate launcher
+
+```
+
+###### 4. Once you have activated your `conda` environment, the command prompt should show the name of your conda environment.
+```bash
+(launcher) py-3.6.9 desktop:
+```
+
+###### 5. When you are done with you session, you may deactivate your `conda` environment using the deactivate command:
+
+```bash
+conda deactivate
+```
+
+#### Installing TAO Launcher
+
+Once you've installed all of the necessary prerequisites.
+
+##### 1. Install the CLI launcher via the quick start script downloaded in the 'Package Content' section above. 
+```bash
+bash setup/quickstart_launcher.sh --install
+```
+##### 2. You can also use this script to update the launcher to the latest version of TAO Toolkit by running the following command
+
+```bash
+bash setup/quickstart_launcher.sh --upgrade
+```
+
+##### 3. Invoke the entrypoints using the `tao` command.
+```bash
+tao --help
+```
+##### 4. When installing the TAO Toolkit Launcher to your host machine’s native python3 as opposed to the recommended route of using virtual environment, you may get an error saying that tao binary wasn’t found. This is because the path to your tao binary installed by pip wasn’t added to the PATH environment variable in your local machine. In this case, please run the following command:
+
+```bash
+export PATH=$PATH:~/.local/bin
+```
+Note: this step is optional if you get an error as described above
+
+#### Launch Local Notebook
+
+you will be on path which end on `/getting_started_v4.0.0.`. Now change the diretory by run this:
+```bash
+cd tao_launcher_starter_kit
+```
+and then
+
+```bash
+jupyter notebook
+```
+You will see the window open in browser as below:
+
+![Notebook](https://github.com/faridelya/Nvidia-TAO-tool-Deep-Stream/blob/master/Install%20TAO%20tool%20kit%20on%20PC/Screenshot%20from%202023-01-13%2016-19-58.png?raw=true)
+
+Now select any model like yolov4.ipynb, customised it according to your usecase and now it's all yours.
 ## Acknowledgements
 
  - [Official Documentation](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/tao/resources/tao-getting-started)
