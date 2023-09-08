@@ -145,8 +145,8 @@ The following is a list of requirements for installing the NVIDIA Container Too
 ###### 3. Choose your organization when prompted for Organization/Team.
 ###### 4. Click Sign In.
 ###### 5. [Get NGC Key](https://ngc.nvidia.com/setup/api-key)
-
-###### 6. Log in to the NGC docker registry (`nvcr.io`) using the command `docker login nvcr.io` and enter the following credentials:
+###### 6.  Go to the [Setup](https://ngc.nvidia.com/setup) of your NVIDIA account and download CLI
+###### 7. Log in to the NGC docker registry (`nvcr.io`) using the command `docker login nvcr.io` and enter the following credentials:
 Output:
 ```bash
 Username: $oauthtoken
